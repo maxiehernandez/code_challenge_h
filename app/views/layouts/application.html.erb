@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CodeChallengeH</title>
-    <%= csrf_meta_tags %>
-
+<head>
+  <title>CodeChallengeH</title>
+  <%= csrf_meta_tags %>
+  <!-- Boutique Carosel -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <%= yield %>
+</body>
 </html>

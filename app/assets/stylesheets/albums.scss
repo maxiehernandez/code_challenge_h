@@ -1,3 +1,85 @@
 // Place all the styles related to the Albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/* Selected Album Card Text Styling*/
+
+// Styling of album cards based on card's position
+li {
+  &.li1.frame3, &.li2.frame3, &.li3.frame3, &.li4.frame3, &.li5.frame3 {
+    background: #00698C !important;
+    color: white;
+    font-family: Roboto;
+  }
+}
+
+li:hover {
+  &.li1.frame3, &.li2.frame3, &.li3.frame3, &.li4.frame3, &.li5.frame3 {
+    background: #0085b2 !important;
+    color: white;
+  }
+}
+
+.li1, .li2, .li3, .li4, .li5 {
+  &.frame1, &.frame2, &.frame4, &.frame5 {
+    > #album-name {
+      color: #00698C;
+    }
+  }
+}
+
+
+/* Arrows */
+.btn.btn-default.left-style {
+  position: absolute;
+  top: 150px;
+  left: 170px;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  span {
+    font-size: 30px;
+    color: #DDDDDD;
+  }
+}
+
+.btn.btn-default.left-style:hover {
+  background-color: #0085b2;
+  span {
+    color: white;
+  }
+}
+
+.btn.btn-default.left-style:active {
+  background-color: #00698C;
+  span {
+    color: white;
+  }
+}
+
+
+.btn.btn-default.right-style {
+  position: absolute;
+  top: 150px;
+  right: 170px;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  span {
+    font-size: 30px;
+    color: #DDDDDD;
+  }
+}
+
+.btn.btn-default.right-style:hover {
+  background-color: #0085b2;
+  span {
+    color: white;
+  }
+}
+
+.btn.btn-default.right-style:active {
+  background-color: #00698C;
+  span {
+    color: white;
+  }
+}
