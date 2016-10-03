@@ -244,6 +244,7 @@ li:hover {
       }
 }
 
+
 // Hover effects for song table
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: #0085b2;
@@ -284,6 +285,21 @@ td.favorite-spacing{
   color: #D9D900;
 }
 
+// Star hover effect
+.tooltip > .tooltip-inner {
+  background-color: #9e9e9e;
+  font-family: Roboto;
+  font-size: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// Star hover effect arrow
+.tooltip > .tooltip-arrow {
+  border-top-color: #9e9e9e !important;
+}
 
 // Song name styling & spacing
 td.song-name {

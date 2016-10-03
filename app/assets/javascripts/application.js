@@ -62,6 +62,7 @@ $(function() {
 
 // HTML styling for songs
 function songMockUp(data) {
+  // Checking to see if there is a song label to append
   var genre = "";
   if ( data.song_label == null ) {
     genre = "";
@@ -72,7 +73,7 @@ function songMockUp(data) {
   }
   return '<tr>' +
   '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.id + '</div></th>' +
-  '<td class="favorite-spacing"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></td>' +
+  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
   '</td>' +
   '<td class="song-time">' + data.song_duration + '</td>' +
@@ -110,4 +111,9 @@ $(document).ready(function (){
 //Favoriting a song
 $(document).on( "click", "td.favorite-spacing", function() {
   $(this).children().toggleClass("favorited");
+});
+
+// Hover effect for favoriting
+$(document).on( "mouseenter", "td.favorite-spacing", function() {
+  $(this).children().tooltip();
 });
