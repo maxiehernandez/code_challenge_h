@@ -10,7 +10,7 @@
   margin: 0 auto;
   position: absolute;
   left: -4%;
-  margin-top: 21px;
+  margin-top: 35px;
 }
 
 /* The frames */
@@ -201,7 +201,7 @@ li:hover {
 #table-wrapper {
   overflow-y: scroll;
   width: 688px;
-  height: 250px;
+  height: 205px;
   margin: 0 auto;
   margin-top: 150px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
@@ -273,8 +273,8 @@ td.song-name {
   font-weight: bold;
 }
 
-// Explicit & upbeat styling & spacing
-.explicit {
+// Song label styling & spacing
+.song-label {
   height: 24px;
   width: 35px;
   background-color: lightgrey;
@@ -288,27 +288,10 @@ td.song-name {
   margin-left: 12px;
 }
 
-.upbeat {
-  height: 24px;
-  width: 35px;
-  background-color: lightgrey;
-  font-size: 12px;
-  color: black;
-  text-align: center;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 11px;
-  padding-right: 8px;
-  margin-left: 12px;
-}
 
-// Explicit & upbeat hover state styling
+// Song label hover state styling
 table.table tr:hover > td {
-  span.upbeat {
-    background-color: #90B9C9;
-    color: white;
-  }
-  span.explicit {
+  span.song-label {
     background-color: #90B9C9;
     color: white;
   }
