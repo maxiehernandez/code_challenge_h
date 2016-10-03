@@ -18,7 +18,7 @@
 
 
 // AJAX call with HTML styling for albums
-function mockUp(data){
+function mockUp(data) {
   return '<li>' +
       '<div class="album-pic">' +
         '<img src="' + data.cover_photo_url + '">' +
@@ -28,19 +28,19 @@ function mockUp(data){
     '</li>';
 }
 
-$(function(){
+$(function() {
   $.ajax({
     url: "https://stg-resque.hakuapp.com/albums.json",
     method: "GET",
     dataType: 'jsonp'
   })
 
-  .done(function( data ) {
-    $.each(data, function(index, value){
+  .done(function(data) {
+    $.each(data, function(index, value) {
       $('#boutique').append(mockUp(value));
     })
   })
-  .success(function(){
+  .success(function() {
     $('#boutique').boutique({
   		container_width: 800,
   		front_img_width: 200,
