@@ -44,7 +44,7 @@ $(function() {
   // Styling of Carousel
   .success(function() {
     $('#boutique').boutique({
-      container_width: 800,
+      container_width: 900,
       front_img_width: 200,
       front_img_height: 200,
       frames: 5,
