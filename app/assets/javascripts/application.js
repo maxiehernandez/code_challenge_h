@@ -16,16 +16,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// HTML styling for albums
-function albumMockUp(data) {
-  return '<li>' +
-  '<div class="album-pic">' +
-  '<img src="' + data.cover_photo_url + '">' +
-  '</div>' +
-  '<div id="album-name"> ' + data.name + '</div>' +
-  '<div id="artist-name"> ' + data.artist_name + '</div>' +
-  '</li>';
-}
 
 // AJAX call for albums
 $(function() {
@@ -57,7 +47,20 @@ $(function() {
       back_topmargin: 0
     });
   });
+  // Selecting the songs from the album in the center location
+  getSongs(1);
+
 })
+
+//Favoriting a song
+$(document).on( "click", "td.favorite-spacing", function() {
+  $(this).children().toggleClass("favorited");
+});
+
+// Hover effect for favoriting
+$(document).on( "mouseenter", "td.favorite-spacing", function() {
+  $(this).children().tooltip();
+});
 
 
 // HTML styling for songs
@@ -81,7 +84,7 @@ function songMockUp(data) {
 }
 
 
-// AJAX call for albums
+// AJAX call for songs
 function getSongs(framenumber) {
   $.ajax({
     url: "https://stg-resque.hakuapp.com/songs.json?album_id=" + framenumber,
@@ -102,18 +105,14 @@ function move_callback(anchor, instance, framenumber){
 	getSongs(framenumber);
 }
 
-// Selecting the songs from the album in the center location
-$(document).ready(function (){
-  getSongs(1);
-});
 
-
-//Favoriting a song
-$(document).on( "click", "td.favorite-spacing", function() {
-  $(this).children().toggleClass("favorited");
-});
-
-// Hover effect for favoriting
-$(document).on( "mouseenter", "td.favorite-spacing", function() {
-  $(this).children().tooltip();
-});
+// HTML styling for albums
+function albumMockUp(data) {
+  return '<li>' +
+  '<div class="album-pic">' +
+  '<img src="' + data.cover_photo_url + '">' +
+  '</div>' +
+  '<div id="album-name"> ' + data.name + '</div>' +
+  '<div id="artist-name"> ' + data.artist_name + '</div>' +
+  '</li>';
+}

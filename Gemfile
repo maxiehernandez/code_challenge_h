@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-# font-awesome
-gem "font-awesome-rails"
+
+# httparty
+gem 'httparty', '~> 0.13.7'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
-
 # postgress database
 gem 'pg', '~> 0.19.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

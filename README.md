@@ -1,6 +1,28 @@
 # Haku Code Challenge
 <br>
-<h2>REQUIREMENTS</h2>
+
+<h5> Libraries used in this project: </h5>
+<ul>
+  <li>jQuery</li>
+  <li>Bootstrap</li>
+  <li>Boutique Carousel</li>
+  <li>Google Fonts</li>
+  <li>HTTParty</li>
+</ul>
+
+<h5> Database </h5>
+<li>Postgress</li>
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+<h2>Instructions</h2>
 <li>The purpose of the design is meant to simulate a digital jukebox. On landing, an album should be auto-selected with the song list and it’s additional details displayed below. Additional details included:</li>
 <ul>
   <li>Track number</li>
@@ -33,7 +55,7 @@ Create the models for Albums and Songs. Please include all associations and vali
 
 <br><br>
 
-<h2> BONUS II <h2>
+<h2> BONUS II </h2>
 <p>
 Create a service to store a user’s favorite song and display the favorites highlighted when loading the page. You can assume the same user is logged in every time the page is loaded. Please show the controller and the model you created to store the user’s favorite songs. For the model, include associations, validations, and methods.
 </p>
@@ -41,12 +63,3 @@ Create a service to store a user’s favorite song and display the favorites hig
 
 
 <br><br><br><br>
-
-
-<h5> Libraries used in this project: </h5>
-<ul>
-  <li>jQuery</li>
-  <li>Bootstrap</li>
-  <li>Boutique Carousel</li>
-  <li>Google Fonts</li>
-</ul>
