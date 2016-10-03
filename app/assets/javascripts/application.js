@@ -16,7 +16,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
 // HTML styling for albums
 function albumMockUp(data) {
   return '<li>' +
@@ -107,8 +106,8 @@ $(document).ready(function (){
   getSongs(1);
 });
 
-$( "td.favorite-spacing" ).on( "click", function(event) {
-  event.preventDefault();
-  console.log( $( this ) );
 
+//Favoriting a song
+$(document).on( "click", "td.favorite-spacing", function() {
+  $(this).children().toggleClass("favorited");
 });
