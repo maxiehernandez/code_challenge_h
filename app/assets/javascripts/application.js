@@ -52,6 +52,11 @@ $(function() {
 
 })
 
+// Collapse song table on click
+$(document).on( "click", ".right-style, .left-style", function() {
+  $('#table-wrapper').height(1);
+});
+
 //Favoriting a song
 $(document).on( "click", "td.favorite-spacing", function() {
   $(this).children().toggleClass("favorited");
@@ -74,7 +79,7 @@ function songMockUp(data) {
       genre += '<span class="song-label">' + value + '</span>';
     })
   }
-  return '<tr>' +
+  return '<tr class="song-tr">' +
   '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.id + '</div></th>' +
   '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
@@ -93,11 +98,15 @@ function getSongs(framenumber) {
   })
   // Emptying the table & appending the json data to the HTML styling
   .done(function(data) {
-    $('tbody').empty();
-    $.each(data, function(index, value){
-      $('tbody').append(songMockUp(value));
-    })
-  });
+        $('tbody').empty();
+        $.each(data, function(index, value){
+          $('tbody').append(songMockUp(value));
+        })
+  })
+  // Making the table collapseable
+  .complete(function(){
+      $('#table-wrapper').height("205px")
+  })
 }
 
 // Connecting songs to their album

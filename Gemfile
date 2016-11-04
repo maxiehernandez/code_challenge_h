@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 
-# httparty
-gem 'httparty', '~> 0.13.7'
+
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 # postgress database

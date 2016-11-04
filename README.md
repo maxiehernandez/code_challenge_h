@@ -7,7 +7,6 @@
   <li>Bootstrap</li>
   <li>Boutique Carousel</li>
   <li>Google Fonts</li>
-  <li>HTTParty</li>
 </ul>
 
 <h5> Database </h5>
