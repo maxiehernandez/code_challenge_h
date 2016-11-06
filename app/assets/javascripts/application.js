@@ -82,7 +82,7 @@ function songMockUp(data) {
     })
   }
   return '<tr class="song-tr">' +
-  '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.id + '</div></th>' +
+  '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.song_order + '</div></th>' +
   '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
   '</td>' +
@@ -101,6 +101,9 @@ function getSongs(framenumber) {
   .done(function(data) {
     // Emptying the table & appending the json data to the HTML styling
       $('tbody').empty();
+      data.sort(function (a, b) {
+        return a.song_order - b.song_order;
+      });
       $.each(data, function(index, value){
         $('tbody').append(songMockUp(value));
       })

@@ -1,4 +1,4 @@
-# Haku Code Challenge
+# Code Challenge
 <br>
 
 <h5> Libraries used in this project: </h5>
