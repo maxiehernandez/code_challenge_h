@@ -19,20 +19,19 @@
 
 // AJAX call for albums
 $(function() {
-  $.ajax({
-    url: "https://stg-resque.hakuapp.com/albums.json",
-    method: "GET",
-    dataType: 'jsonp'
-  })
   // Appending the json data to the HTML styling
+  $.ajax({
+    url: "https://gentle-wave-81371.herokuapp.com/albums",
+    method: "GET",
+    dataType: 'json'
+  })
   .done(function(data) {
     $.each(data, function(index, value) {
       $('#boutique').append(albumMockUp(value));
     })
   })
-
-  // Styling of Carousel
   .success(function() {
+    // Styling of Carousel
     $('#boutique').boutique({
       container_width: 900,
       front_img_width: 200,
@@ -46,6 +45,9 @@ $(function() {
       behind_topmargin: 35,
       back_topmargin: 0
     });
+  })
+  .error(function(e){
+    console.log(e)
   });
   // Selecting the songs from the album in the center location
   getSongs(1);
@@ -72,7 +74,7 @@ $(document).on( "mouseenter", "td.favorite-spacing", function() {
 function songMockUp(data) {
   // Checking to see if there is a song label to append
   var genre = "";
-  if ( data.song_label == null ) {
+  if ( data.song_label == [] ) {
     genre = "";
   }else {
     $.each(data.song_label, function(index, value){
@@ -92,20 +94,20 @@ function songMockUp(data) {
 // AJAX call for songs
 function getSongs(framenumber) {
   $.ajax({
-    url: "https://stg-resque.hakuapp.com/songs.json?album_id=" + framenumber,
+    url: "https://gentle-wave-81371.herokuapp.com/songs?album_id=" + framenumber,
     method: "GET",
-    dataType: 'jsonp'
+    dataType: 'json'
   })
-  // Emptying the table & appending the json data to the HTML styling
   .done(function(data) {
-        $('tbody').empty();
-        $.each(data, function(index, value){
-          $('tbody').append(songMockUp(value));
-        })
+    // Emptying the table & appending the json data to the HTML styling
+      $('tbody').empty();
+      $.each(data, function(index, value){
+        $('tbody').append(songMockUp(value));
+      })
   })
-  // Making the table collapseable
   .complete(function(){
-      $('#table-wrapper').height("205px")
+    // Making the table collapseable
+    $('#table-wrapper').height("205px")
   })
 }
 
