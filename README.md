@@ -1,4 +1,6 @@
-# Code Challenge
+# Jukebox Simulation
+
+You can view this app live with this link: http://jukebox-simulation.herokuapp.com/
 <br>
 
 <h5> Libraries used in this project: </h5>
