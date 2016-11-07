@@ -50,7 +50,7 @@ $(document).on( "click", "td.favorite-spacing", function() {
     url: "https://gentle-wave-81371.herokuapp.com/favorite",
     method: "GET",
     dataType: 'json',
-    data: { favorite: is_favorited, song_id: dataId }
+    data: { favorite: is_favorited, id: Number(dataId) }
   })
   .done(function() {
 
