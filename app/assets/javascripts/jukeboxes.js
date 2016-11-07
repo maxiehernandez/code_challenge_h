@@ -1,4 +1,3 @@
-
 // AJAX call for albums
 $(function() {
   // Appending the json data to the HTML styling

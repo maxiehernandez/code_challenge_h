@@ -1,3 +1,351 @@
-// Place all the styles related to the jukeboxes controller here.
+// Place all the styles related to the Albums controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/* Positioning of the Carousel */
+#boutique {
+  display: none;
+  margin: 0 auto;
+  position: absolute;
+  left: -3.1%;
+  margin-top: 35px;
+}
+
+/* The frames */
+#boutique li {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  height: 350px;
+  width: 290px;
+  border-radius: 4px;
+}
+
+/* Carousel Styling */
+.boutique {
+  margin: 0;
+  padding: 0;
+  position: relative !important;
+  z-index: 1;
+}
+
+.boutique li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  z-index: 1;
+  display: none;
+  border-width: 0;
+}
+
+.boutique img {
+  border: 0;
+  vertical-align: bottom;
+}
+
+.boutique span {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  cursor: default;
+  margin: 0;
+}
+
+.boutique h6 {
+  cursor: default;
+}
+
+.boutique a, .boutique a:hover {
+  cursor: default;
+  text-decoration: none;
+  outline:none;
+}
+
+.boutique img, .boutique li, .boutique a {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  user-drag: none;
+}
+
+.boutique.rtl h6, .boutique.rtl span {
+  text-align: right;
+}
+
+/* Styling the album cover */
+.album-pic {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 18px;
+  padding-top: 22px;
+}
+
+/* Text in album cards */
+#album-name {
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  line-height: 25px;
+}
+#artist-name {
+  font-size: 16.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+// Styling of album cards based on card's position
+// Behind cards styling
+li {
+  &.li1.frame3, &.li2.frame3, &.li3.frame3, &.li4.frame3, &.li5.frame3 {
+    background: #00698C !important;
+    color: white;
+    font-family: Roboto;
+  }
+}
+
+// Behind cards hover styling
+li:hover {
+  &.li1.frame3, &.li2.frame3, &.li3.frame3, &.li4.frame3, &.li5.frame3 {
+    background: #0085b2 !important;
+    color: white;
+  }
+}
+
+// Front card styling
+.li1, .li2, .li3, .li4, .li5 {
+  &.frame1, &.frame2, &.frame4, &.frame5 {
+    > #album-name {
+      color: #00698C;
+    }
+  }
+}
+
+
+/* Arrows */
+.btn.btn-default.left-style {
+  position: absolute;
+  top: 150px;
+  left: 3%;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  border-color: #DDDDDD;
+  z-index: 2;
+  outline: none;
+  span {
+    font-size: 30px;
+    color: #DDDDDD;
+  }
+}
+
+.btn.btn-default.left-style:hover {
+  background-color: #0085b2 !important;
+  span {
+    color: white !important;
+  }
+}
+
+.btn.btn-default.left-style:active {
+  background-color: #00698C !important;
+  span {
+    color: white !important;
+  }
+}
+
+.btn.btn-default.left-style:focus {
+  background-color: #fff;
+  border-color: #DDDDDD;
+  span {
+    color: #DDDDDD;
+  }
+}
+
+.btn.btn-default.right-style {
+  position: absolute;
+  top: 150px;
+  right: 3%;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  z-index: 2;
+  outline: none;
+  span {
+    font-size: 30px;
+    color: #DDDDDD;
+  }
+}
+
+.btn.btn-default.right-style:hover {
+  background-color: #0085b2 !important;
+  span {
+    color: white !important;
+  }
+}
+
+.btn.btn-default.right-style:active {
+  background-color: #00698C !important;
+  span {
+    color: white !important;
+  }
+}
+
+.btn.btn-default.right-style:focus {
+  background-color: #fff;
+  border-color: #DDDDDD;
+  span {
+    color: #DDDDDD;
+  }
+}
+
+
+// Songs table wrapper styling
+#table-wrapper {
+  overflow-y: scroll;
+  width: 738.3px;
+  height: 205px;
+  margin: 0 auto;
+  margin-top: 150px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+
+// Songs table
+.table.table-hover.hover-color.songs-table {
+  background-color: #f5f5f5;
+  margin: 0;
+    tbody {
+      vertical-align: middle;
+      font-family: Roboto;
+    }
+      td {
+        vertical-align: middle;
+        font-family: Roboto;
+        text-transform: uppercase;
+      }
+}
+
+
+// Hover effects for song table
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #0085b2;
+  color: white;
+}
+
+
+// Each table rows & their elements
+// Spacing & size of th column
+th.song-order-spacing{
+  padding-left: 15px;
+  width: 40px;
+}
+
+// Song order number box styling & spacing
+.song-order {
+  height: 28px;
+  width: 28px;
+  background-color: #90B9C9;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+// Star styling & spacing
+td.favorite-spacing{
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 40px;
+  color: #DDDDDD;
+  font-size: 20px;
+}
+
+// Star toggle effect
+.favorited {
+  color: #D9D900;
+}
+
+// Star hover effect
+.tooltip > .tooltip-inner {
+  background-color: #9e9e9e;
+  font-family: Roboto;
+  font-size: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// Star hover effect arrow
+.tooltip > .tooltip-arrow {
+  border-top-color: #9e9e9e !important;
+}
+
+// Song name styling & spacing
+td.song-name {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 545px;
+  font-size: 16px;
+  color: #0085B2;
+  letter-spacing: 1.1px;
+  font-weight: bold;
+}
+
+// Song label styling & spacing
+.song-label {
+  height: 24px;
+  width: 35px;
+  background-color: lightgrey;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 11px;
+  padding-right: 8px;
+  margin-left: 12px;
+}
+
+
+// Song label hover state styling
+table.table tr:hover > td {
+  span.song-label {
+    background-color: #90B9C9;
+    color: white;
+  }
+}
+
+// Song time styling
+.song-time {
+  font-size: 16px;
+  letter-spacing: 1.1px;
+  font-weight: bold;
+}
+
+// Song table collapseable
+#table-wrapper {
+  height: 1px;
+  transition-duration: .7s;
+}
