@@ -3,7 +3,7 @@
 You can view this app live with this link: http://jukebox-simulation.herokuapp.com/
 <br>
 
-<h5> Libraries used in this project: </h5>
+<h4> Libraries used in this project: </h4>
 <ul>
   <li>jQuery</li>
     <ul>
@@ -33,30 +33,34 @@ The API provides the albums, album titles and artist that are all imported into 
 </p>
 
 <p>
-This application utilizes the Rails framework and needs one view(HTML), controller, stylesheet(SCSS), JavaScript file and the above libraries mentioned. 
+This application utilizes the Rails framework and needs one view(HTML), controller, stylesheet(SCSS), JavaScript file and the above libraries mentioned.
 </p>
 
 <br><br>
 
 
 <h2>Jukebox Simulation in Action</h2>
-<li>The purpose of the design is meant to simulate a digital jukebox. On landing, an album is auto-selected with the song list and it’s additional details displayed below. Additional details included:</li>
 <ul>
-  <li>Track number</li>
-  <li>Song length</li>
-  <li>Mark as favorite</li>
-  <li>Song Name</li>
-  <li>Categorization</li>
+  <li>The purpose of the design is meant to simulate a digital jukebox. On landing, an album is auto-selected with the song list and it’s additional details displayed below. Additional details included:</li>
+  <ul>
+    <li>Track number</li>
+    <li>Song length</li>
+    <li>Mark as favorite</li>
+    <li>Song Name</li>
+    <li>Categorization</li>
+      <ul>
+        <li>Explicit</li>
+        <li>Upbeat</li>
+        <li>Slow</li>
+      </ul>
+  </ul>
+
+  <li>Users are able to scroll through the carousel both in the left and right directions.</li>
+
+  <li>When the user scrolls, the next album in the carousel selects the corresponding song list and additional details are displayed below </li>
     <ul>
-      <li>Explicit</li>
-      <li>Upbeat</li>
-      <li>Slow</li>
+      <li>For this interaction the currently selected album’s song list collapse closes, the albums carousel, and then the newly selected album’s song list expands open. </li>
     </ul>
 </ul>
-<li>Users are able to scroll through the carousel both in the left and right directions.</li>
-<li>When the user scrolls, the next album in the carousel selects the corresponding song list and additional details are displayed below </li>
-  <ul>
-    <li>For this interaction the currently selected album’s song list collapse closes, the albums carousel, and then the newly selected album’s song list expands open. </li>
-  </ul>
 
 <br><br>
