@@ -6,24 +6,41 @@ You can view this app live with this link: http://jukebox-simulation.herokuapp.c
 <h5> Libraries used in this project: </h5>
 <ul>
   <li>jQuery</li>
+    <ul>
+      <li>jQuery was used to simplify scripting in the browser. It allows you to use CSS selectors and target HTML elements.</li>
+    </ul>
   <li>Bootstrap</li>
+    <ul>
+      <li>Bootstrap was used to quickly create HTML styling and simplify placement of the different components. This library also allows for consistency, cross browser compatibility and customization.</li>
+    </ul>
   <li>Boutique Carousel</li>
-  <li>Google Fonts</li>
+    <ul>
+      <li>The Boutique Carousel was used for it's ease of implementation and usability. The carousel allows a smooth transition, customization and the ability to differentiate between the currently selected album, which allowed me to connect the albums songs to the album. </li>
+    </ul>
 </ul>
 
-<h5> Database </h5>
-<li>Postgress</li>
+
+<br><br>
 
 
+<h2> OVERVIEW: </h2>
+<p>
+This application utilizes JavaScrip, HTML and SCSS. It runs off an API I built that you can view here: https://github.com/maxiehernandez/jukebox_api  
+</p>
+
+<p>
+The API provides the albums, album titles and artist that are all imported into the carousel. The main frame of the carousel is connected to the song table below it, and utilizes the album_id to connect the songs to the specified album. All of this is done with an AJAX call within the JavaScript file. No database was needed as all the backend, such as saving the songs and albums to the database, is handled by the API.
+</p>
+
+<p>
+This application utilizes the Rails framework and needs one view(HTML), controller, stylesheet(SCSS), JavaScript file and the above libraries mentioned. 
+</p>
+
+<br><br>
 
 
-
-
-<br><br><br><br>
-
-
-<h2>Instructions</h2>
-<li>The purpose of the design is meant to simulate a digital jukebox. On landing, an album should be auto-selected with the song list and it’s additional details displayed below. Additional details included:</li>
+<h2>Jukebox Simulation in Action</h2>
+<li>The purpose of the design is meant to simulate a digital jukebox. On landing, an album is auto-selected with the song list and it’s additional details displayed below. Additional details included:</li>
 <ul>
   <li>Track number</li>
   <li>Song length</li>
@@ -33,33 +50,13 @@ You can view this app live with this link: http://jukebox-simulation.herokuapp.c
     <ul>
       <li>Explicit</li>
       <li>Upbeat</li>
+      <li>Slow</li>
     </ul>
 </ul>
-<li>The user should then be able to scroll through the carousel both in the left and right directions.</li>
+<li>Users are able to scroll through the carousel both in the left and right directions.</li>
+<li>When the user scrolls, the next album in the carousel selects the corresponding song list and additional details are displayed below </li>
   <ul>
-    <li>The interaction on the carousel should be smooth and subtle. </li>
+    <li>For this interaction the currently selected album’s song list collapse closes, the albums carousel, and then the newly selected album’s song list expands open. </li>
   </ul>
-<li>When the user scrolls, the next album in the carousel should select and the corresponding song list and additional details should display below </li>
-  <ul>
-    <li>For this interaction we’d like to have the currently selected album’s song list collapse close, the albums carousel, and then the newly selected album’s song list expand open. </li>
-  </ul>
-<li>Please implement the interface as closely to the provided design as possible. Use the second page of the PDF to guide the styles and interactions you implement. Feel free to use any animations or interactions you think would enrich the user experience.</li>
-<br><br><br><br>
-
-
-<h2> BONUS I </h2>
-
-<p>
-Create the models for Albums and Songs. Please include all associations and validations you deem relevant.
-</p>
 
 <br><br>
-
-<h2> BONUS II </h2>
-<p>
-Create a service to store a user’s favorite song and display the favorites highlighted when loading the page. You can assume the same user is logged in every time the page is loaded. Please show the controller and the model you created to store the user’s favorite songs. For the model, include associations, validations, and methods.
-</p>
-
-
-
-<br><br><br><br>
