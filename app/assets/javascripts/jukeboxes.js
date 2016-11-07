@@ -76,7 +76,7 @@ function songMockUp(data) {
   }
   return '<tr class="song-tr" data-song-id="'+ data.id  +'">' +
   '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.song_order + '</div></th>' +
-  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star'+ (data.favorite ? 'favorited' : '') +'" aria-hidden="true"></span></td>' +
+  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star'+ (data.favorite ? ' favorited' : '') +'" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
   '</td>' +
   '<td class="song-time">' + data.song_duration + '</td>' +
