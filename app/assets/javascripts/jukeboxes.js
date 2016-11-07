@@ -42,7 +42,19 @@ $(document).on( "click", ".right-style, .left-style, #boutique li", function() {
 
 //Favoriting a song
 $(document).on( "click", "td.favorite-spacing", function() {
-  $(this).children().toggleClass("favorited");
+  var star = $(this).children();
+  star.toggleClass("favorited");
+  var is_favorited = star.hasClass("favorited"),
+      dataId = $(this).closest(".song-tr").data().songId;
+  $.ajax({
+    url: "https://gentle-wave-81371.herokuapp.com/favorite",
+    method: "GET",
+    dataType: 'json',
+    data: { favorite: is_favorited, song_id: dataId }
+  })
+  .done(function() {
+
+  });
 });
 
 // Hover effect for favoriting
@@ -62,9 +74,9 @@ function songMockUp(data) {
       genre += '<span class="song-label">' + value + '</span>';
     })
   }
-  return '<tr class="song-tr">' +
+  return '<tr class="song-tr" data-song-id="'+ data.id  +'">' +
   '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.song_order + '</div></th>' +
-  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star" aria-hidden="true"></span></td>' +
+  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star'+ (data.favorite ? 'favorited' : '') +'" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
   '</td>' +
   '<td class="song-time">' + data.song_duration + '</td>' +
