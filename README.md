@@ -29,7 +29,11 @@ This application utilizes JavaScrip, HTML and SCSS. It runs off an API I built t
 </p>
 
 <p>
-The API provides the albums, album titles and artist that are all imported into the carousel. The main frame of the carousel is connected to the song table below it, and utilizes the album_id to connect the songs to the specified album. All of this is done with an AJAX call within the JavaScript file. No database was needed as all the backend, such as saving the songs and albums to the database, is handled by the API.
+The API provides the albums, album titles and artist that are all imported into the carousel. The main frame of the carousel is connected to the song table below it, and utilizes the album_id to connect the songs to the specified album. The songs and all it's attributes (song name, song order, song duration, favorite, etc.) that are displayed in the songs table are also coming from the API. All of this is done through AJAX calls within the JavaScript file. 
+</p>
+
+<p>
+No database was needed as all the backend, such as saving the songs and albums in the database, is handled by the API. If you favorite a song it will persist in the database trough the API and the tooltip will appropriately state "Mark as favorite" or "Unfavorite" based on the state of the star.
 </p>
 
 <p>
