@@ -28,7 +28,6 @@ $(function() {
     });
   })
   .error(function(e){
-    console.log(e)
   });
   // Selecting the songs from the album in the center location
   getSongs(1);
@@ -42,7 +41,7 @@ $(document).on( "click", ".right-style, .left-style, #boutique li", function() {
 
 //Favoriting a song
 $(document).on( "click", "td.favorite-spacing", function() {
-  var star = $(this).children();
+  var star = $(this).find(".glyphicon-star");
   star.toggleClass("favorited");
   var is_favorited = star.hasClass("favorited"),
       dataId = $(this).closest(".song-tr").data().songId;
@@ -50,10 +49,10 @@ $(document).on( "click", "td.favorite-spacing", function() {
     url: "https://gentle-wave-81371.herokuapp.com/favorite",
     method: "GET",
     dataType: 'json',
-    data: { favorite: is_favorited, id: Number(dataId) }
+    data: { favorite: is_favorited, id: dataId }
   })
-  .done(function() {
-
+  .done(function(data) {
+    star.attr("data-original-title", data.tooltip);
   });
 });
 
@@ -76,7 +75,7 @@ function songMockUp(data) {
   }
   return '<tr class="song-tr" data-song-id="'+ data.id  +'">' +
   '<th scope="row" class="song-order-spacing"><div class="song-order">' + data.song_order + '</div></th>' +
-  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="MARK AS FAVORITE" class="glyphicon glyphicon-star'+ (data.favorite ? ' favorited' : '') +'" aria-hidden="true"></span></td>' +
+  '<td class="favorite-spacing"><span data-toggle="tooltip" data-placement="top" title="' + (data.favorite ? 'Unfavorite' : 'Mark as favorite') + '" class="glyphicon glyphicon-star'+ (data.favorite ? ' favorited' : '') +'" aria-hidden="true"></span></td>' +
   '<td class="song-name">' + data.song_name + genre +
   '</td>' +
   '<td class="song-time">' + data.song_duration + '</td>' +
